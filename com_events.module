@@ -1,0 +1,17 @@
+<?php
+/**
+ * @file
+ * Code for the Events feature.
+ */
+
+include_once 'com_events.features.inc';
+
+function com_events_theme_registry_alter(&$theme_registry) {
+  // tell the theme system to look in the "templates" subdirectory within our module directory
+  $module_path = drupal_get_path('module', 'com_events');
+  $theme_registry['search_results']['theme paths'] = array(0 => $module_path . '/templates');
+  $theme_registry['search_results']['theme path'] = $module_path . '/templates';
+  $theme_registry['search_results']['path'] = $module_path . '/templates';
+  // tell the theme system to use 'search-results.tpl.php' as the template file. Note that you do not include 'tpl.php'
+  $theme_registry['search_results']['template'] = 'search-results';
+}
