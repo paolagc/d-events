@@ -10,107 +10,48 @@
 function com_events_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'entityform-rsvp_event-field_rsvp_confirm_assistance'
-  $field_instances['entityform-rsvp_event-field_rsvp_confirm_assistance'] = array(
-    'bundle' => 'rsvp_event',
-    'default_value' => array(
-      0 => array(
-        'value' => 'Yes',
-      ),
-    ),
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'list',
-        'settings' => array(),
-        'type' => 'list_default',
-        'weight' => 1,
-      ),
-    ),
-    'entity_type' => 'entityform',
-    'field_name' => 'field_rsvp_confirm_assistance',
-    'label' => 'Confirm Assistance',
-    'required' => 1,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(),
-      'type' => 'options_buttons',
-      'weight' => 2,
-    ),
-  );
-
-  // Exported field_instance: 'entityform-rsvp_event-field_rsvp_message'
-  $field_instances['entityform-rsvp_event-field_rsvp_message'] = array(
-    'bundle' => 'rsvp_event',
+  // Exported field_instance: 'node-event-body'
+  $field_instances['node-event-body'] = array(
+    'bundle' => 'event',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 2,
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(
+          'trim_length' => 600,
+        ),
+        'type' => 'text_summary_or_trimmed',
+        'weight' => 0,
       ),
     ),
-    'entity_type' => 'entityform',
-    'field_name' => 'field_rsvp_message',
-    'label' => 'Message',
+    'entity_type' => 'node',
+    'field_name' => 'body',
+    'label' => 'Description',
     'required' => 0,
     'settings' => array(
-      'text_processing' => 0,
+      'display_summary' => 1,
+      'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
       'active' => 1,
       'module' => 'text',
       'settings' => array(
-        'rows' => 5,
+        'rows' => 20,
+        'summary_rows' => 5,
       ),
-      'type' => 'text_textarea',
-      'weight' => 3,
-    ),
-  );
-
-  // Exported field_instance: 'entityform-rsvp_event-field_rsvp_user'
-  $field_instances['entityform-rsvp_event-field_rsvp_user'] = array(
-    'bundle' => 'rsvp_event',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'user_reference',
-        'settings' => array(),
-        'type' => 'user_reference_default',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'entityform',
-    'field_name' => 'field_rsvp_user',
-    'label' => 'User',
-    'required' => 0,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'user_reference',
-      'settings' => array(
-        'autocomplete_match' => 'contains',
-        'autocomplete_path' => 'user_reference/autocomplete',
-        'size' => 60,
-      ),
-      'type' => 'user_reference_autocomplete',
-      'weight' => 1,
+      'type' => 'text_textarea_with_summary',
+      'weight' => -4,
     ),
   );
 
@@ -163,47 +104,7 @@ function com_events_field_default_field_instances() {
         'year_range' => '-3:+3',
       ),
       'type' => 'date_popup',
-      'weight' => 3,
-    ),
-  );
-
-  // Exported field_instance: 'node-event-field_event_description'
-  $field_instances['node-event-field_event_description'] = array(
-    'bundle' => 'event',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 6,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_event_description',
-    'label' => 'Description',
-    'required' => 0,
-    'settings' => array(
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'rows' => 5,
-      ),
-      'type' => 'text_textarea',
-      'weight' => 1,
+      'weight' => -2,
     ),
   );
 
@@ -243,7 +144,7 @@ function com_events_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 2,
+      'weight' => -3,
     ),
   );
 
@@ -289,7 +190,7 @@ function com_events_field_default_field_instances() {
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 5,
+      'weight' => 0,
     ),
   );
 
@@ -330,65 +231,18 @@ function com_events_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 4,
-    ),
-  );
-
-  // Exported field_instance: 'node-event-field_event_rsvp_form'
-  $field_instances['node-event-field_event_rsvp_form'] = array(
-    'bundle' => 'event',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'entityreference',
-        'settings' => array(
-          'link' => FALSE,
-        ),
-        'type' => 'entityreference_label',
-        'weight' => 5,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_event_rsvp_form',
-    'label' => 'RSVP form',
-    'required' => 0,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'entityreference',
-      'settings' => array(
-        'match_operator' => 'CONTAINS',
-        'path' => '',
-        'size' => 60,
-      ),
-      'type' => 'entityreference_autocomplete',
-      'weight' => 6,
+      'weight' => -1,
     ),
   );
 
   // Translatables
   // Included for use with string extractors like potx.
-  t('Confirm Assistance');
   t('Dates');
   t('Description');
   t('In case that the event requires user subscription, specify the maximum number of participant allowed to subscribe( leave it blank when there is no limit required)');
   t('Location');
-  t('Message');
   t('Participants');
   t('Participation');
-  t('RSVP form');
-  t('User');
 
   return $field_instances;
 }

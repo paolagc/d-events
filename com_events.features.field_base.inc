@@ -10,6 +10,35 @@
 function com_events_field_default_field_bases() {
   $field_bases = array();
 
+  // Exported field_base: 'body'
+  $field_bases['body'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(
+      0 => 'node',
+    ),
+    'field_name' => 'body',
+    'foreign keys' => array(
+      'format' => array(
+        'columns' => array(
+          'format' => 'format',
+        ),
+        'table' => 'filter_format',
+      ),
+    ),
+    'indexes' => array(
+      'format' => array(
+        0 => 'format',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'text',
+    'settings' => array(),
+    'translatable' => 0,
+    'type' => 'text_with_summary',
+  );
+
   // Exported field_base: 'field_event_dates'
   $field_bases['field_event_dates'] = array(
     'active' => 1,
@@ -38,33 +67,6 @@ function com_events_field_default_field_bases() {
     ),
     'translatable' => 0,
     'type' => 'datetime',
-  );
-
-  // Exported field_base: 'field_event_description'
-  $field_bases['field_event_description'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_event_description',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
-    'indexes' => array(
-      'format' => array(
-        0 => 'format',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'text',
-    'settings' => array(),
-    'translatable' => 0,
-    'type' => 'text_long',
   );
 
   // Exported field_base: 'field_event_location'
@@ -135,141 +137,6 @@ function com_events_field_default_field_bases() {
     ),
     'translatable' => 0,
     'type' => 'list_text',
-  );
-
-  // Exported field_base: 'field_event_rsvp_form'
-  $field_bases['field_event_rsvp_form'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_event_rsvp_form',
-    'foreign keys' => array(
-      'entityform_type' => array(
-        'columns' => array(
-          'target_id' => 'id',
-        ),
-        'table' => 'entityform_type',
-      ),
-    ),
-    'indexes' => array(
-      'target_id' => array(
-        0 => 'target_id',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'entityreference',
-    'settings' => array(
-      'handler' => 'base',
-      'handler_settings' => array(
-        'behaviors' => array(
-          'views-select-list' => array(
-            'status' => 0,
-          ),
-        ),
-        'sort' => array(
-          'type' => 'none',
-        ),
-        'target_bundles' => array(),
-      ),
-      'target_type' => 'entityform_type',
-    ),
-    'translatable' => 0,
-    'type' => 'entityreference',
-  );
-
-  // Exported field_base: 'field_rsvp_confirm_assistance'
-  $field_bases['field_rsvp_confirm_assistance'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_rsvp_confirm_assistance',
-    'foreign keys' => array(),
-    'indexes' => array(
-      'value' => array(
-        0 => 'value',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'list',
-    'settings' => array(
-      'allowed_values' => array(
-        'Yes' => 'Yes',
-        'Maybe' => 'Maybe',
-        'No' => 'No',
-      ),
-      'allowed_values_function' => '',
-    ),
-    'translatable' => 0,
-    'type' => 'list_text',
-  );
-
-  // Exported field_base: 'field_rsvp_message'
-  $field_bases['field_rsvp_message'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_rsvp_message',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
-    'indexes' => array(
-      'format' => array(
-        0 => 'format',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'text',
-    'settings' => array(),
-    'translatable' => 0,
-    'type' => 'text_long',
-  );
-
-  // Exported field_base: 'field_rsvp_user'
-  $field_bases['field_rsvp_user'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_rsvp_user',
-    'foreign keys' => array(
-      'uid' => array(
-        'columns' => array(
-          'uid' => 'uid',
-        ),
-        'table' => 'users',
-      ),
-    ),
-    'indexes' => array(
-      'uid' => array(
-        0 => 'uid',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'user_reference',
-    'settings' => array(
-      'referenceable_roles' => array(
-        2 => 2,
-      ),
-      'referenceable_status' => array(
-        0 => 0,
-        1 => 1,
-      ),
-      'view' => array(
-        'args' => array(),
-        'display_name' => '',
-        'view_name' => '',
-      ),
-    ),
-    'translatable' => 0,
-    'type' => 'user_reference',
   );
 
   return $field_bases;
